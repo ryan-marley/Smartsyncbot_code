@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="shortcut icon" href="/static/images/iqvialogo.png" type="image/png">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+  <div class="sidenav">
+   
+
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+      <div class="login-form">
+
+         <h2>Login</h2>
+         {% if error_message %}
+         <p style="color: red">{{ error_message }}</p>
+         {% endif %}
+         <form method="post">
+           {% csrf_token %}
+           <label for="username">Username:</label> 
+           <!-- this stores the username entered by user -->
+           <input type="text" name="username" required><br>
+           <label for="password">Password:</label>
+                      <!-- this stores the username entered by user -->
+
+           <input type="password" name="password" required> <br>
+           <input type="submit" value="Login"> 
+           <!-- after pressing submit button , the values go to views.py file in home folder -->
+         </form>
+       </div>
+
+    </div>
+ </div>
+</body>
+</html>

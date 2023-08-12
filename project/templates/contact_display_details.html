@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Sync Bot</title>
+    <link rel="shortcut icon" href="/static/images/iqvialogo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www.iqvia.com/">IQVIA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/workbench">Workbench</a>
+              </li>
+      
+              {% comment %} <li class="nav-item">
+                  <a class="nav-link active" href="/contacts">Help</a>
+                </li> {% endcomment %}
+
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">LogOut</a>
+              </li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+      <body >
+
+	<h1>Contact Details</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for contact in contacts %}
+			<tr>
+				<td id="name" name="name">{{ contact.name }}</td>
+				<td>{{ contact.email }}</td>
+				<td>{{ contact.phone }}</td>
+				<td id="desc" name="desc">{{ contact.desc }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+
+    <h1>Response message: </h1>
+
+    <pre>{{ response|safe }}</pre>
+			 
+
+
+	</table>
+</body>
+</html>
